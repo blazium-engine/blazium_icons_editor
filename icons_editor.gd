@@ -222,9 +222,9 @@ func _on_settings_window_close_requested():
 
 
 func _on_custom_color_changed(col: Color):
-	if !selected:
+	if not selected:
 		return
-	if !use_custom_color.button_pressed:
+	if not use_custom_color.button_pressed:
 		return
 	selected.color = "#" + col.to_html(false)
 	_update_icon()
@@ -379,7 +379,7 @@ class IconButton extends Button:
 	func _gui_input(event: InputEvent) -> void:
 		if not event is InputEventMouseButton:
 			return
-		if not (event.button_index == MOUSE_BUTTON_RIGHT && event.is_pressed()):
+		if not (event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed()):
 			return
 		grab_focus()
 

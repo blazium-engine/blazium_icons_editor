@@ -35,7 +35,7 @@ func _enter_tree() -> void:
 
 	update_generated_icons(ProjectSettings.get_setting(ICONS_PATH, {}))
 
-	if !FileAccess.file_exists(LOADER_PATH):
+	if not FileAccess.file_exists(LOADER_PATH):
 		var file = FileAccess.open(LOADER_PATH, FileAccess.WRITE)
 		file.store_string(LOADER_SCRIPT % ICONS_PATH)
 		file.close()
